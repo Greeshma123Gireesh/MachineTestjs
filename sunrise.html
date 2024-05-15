@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("image/sunrise.jpg");
+            background-repeat: no-repeat;
+            /* height: 100%; */
+            /* background-position:100%; */
+            background-size: cover;
+            filter: blur(40px);
+            transition: filter 1s;
+        }
+
+            img{
+        position: absolute;
+            right: 0;
+            top: 300px; 
+    }
+    #hen img
+    { position: absolute;
+            left: 0;
+            top: 450px; 
+
+    }
+    </style>
+</head>
+<body>
+    <img id="sun" src="image/sun.png" alt="sun">
+    <div id="hen">
+        <img src="image/hen (2).png" alt="">
+    </div>
+    <script>
+        let position=0;
+        let image =document.getElementById('sun');
+        let body = document.body;
+        let blurValue = 5; 
+        function sunmove(){
+            position+=1;
+             image.style.right=position+'px';
+             if (blurValue > 0) {
+                blurValue -= .1;  
+                body.style.filter = `blur(${blurValue}px)`;
+            }
+             setTimeout(sunmove,2);
+ 
+        };
+        sunmove();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+    body{
+        background-color: black;
+    }
+    img{
+        position: absolute;
+            left: 0;
+            top: 300px; 
+    }
+</style>
+    
+</head>
+<body>
+    <button onclick="moonmove()">clickme</button><br>
+    <img id="moon" src="image/moon.jpg" alt="moon">
+<script>
+    let position=0;
+    const screenWidth = window.innerWidth;
+    let image=document.getElementById('moon');
+    function moonmove(){
+        position+=1;
+        image.style.left=position+'px';
+        
+       
+        if (position > screenWidth) {
+              
+              window.location.href = 'sunrise.html'; 
+        }
+        else{
+            setTimeout(moonmove,2);
+        }
+    };
+   
+    </script>
+</body>
+</html>
